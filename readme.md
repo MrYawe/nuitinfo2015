@@ -1,8 +1,8 @@
-## Laravel PHP Framework
+## Nuit de l'info 2015
 
-## Installation
+# Installation
 
-## Bug courant
+# Bug courant
 Lors d'un "sudo composer dump-autoload" :
 [ErrorException]                                                                                      
   file_put_contents(/home/vagrant/Code/nuitinfo2015/vendor/composer/autoload_namespaces.php): failed t  
