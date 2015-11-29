@@ -35,7 +35,8 @@
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Welcome</a></li>
 					<li><a href="{{ url('/socket-example') }}">Socket example</a></li>
-					<li><a href="{{ url('/fire') }}" target="_blank">Fire event</a></li>
+					<li><a href="{{ url('/fire') }}" target="_blank">Fire public event</a></li>
+					<li><a href="{{ url('/fire-private') }}" target="_blank">Fire private event</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">

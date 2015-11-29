@@ -15,10 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// test : fire public envent
 Route::get('fire', function () {
     // this fires the event
     event(new App\Events\EventName());
-    return "event fired";
+    return "public event fired";
+});
+
+// test : fire private event
+Route::get('fire-private', function () {
+    // this fires the event
+    event(new App\Events\PrivateMessageTest());
+    return "private event fired";
 });
 
 Route::get('socket-example', function () {

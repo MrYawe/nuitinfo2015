@@ -7,22 +7,26 @@ var cookie = require('cookie');
 var mcrypt = require('mcrypt');
 var MCrypt = require('mcrypt').MCrypt;
 var PHPUnserialize = require('php-unserialize');
+var util = require("util");
 
-redis.subscribe('test-channel', function(err, count) {
+process.env.REDIS_DB = 0;
+var cookieKey = 'login_82e5d2c56bdd0811318f0cf078b78bfc'; // name of the cookie used for authentication. Get by Auth::getName() in Laravel
+var key    = 'v0YAKTyTkRYOTJq15D3yRZ25HHra1yoC'; // laravel app key
+
+var connectedUsers = [];
+
+redis.psubscribe('*', function(err, count) {
 });
 
-redis.on('message', function(channel, message) {
-    console.log('Message Recieved: ' + message);
+redis.on('pmessage', function(subscribed, channel, message) {
     message = JSON.parse(message);
-    io.emit(channel + ':' + message.event, message.data);
+   
+    if(!message.data.to) { // si il n'y a pas de destinataire défini -> c'est un message public 
+        console.log('Public Message Recieved: ' + util.inspect(message));
+        io.emit(channel + ':' + message.event, message.data);
+    }
 });
 
-http.listen(3000, function(){
-    console.log('Listening on Port 3000');
-});
-
-
-/******************************* LAB ********************************/
 /**
  * Helper function to return ASCII code of character
  * @param  [string] string
@@ -38,13 +42,12 @@ function ord( string ) {
  * @param  [cookie] cookie
  * @return session
  */
-function getSessionIdFromLaravelCookie( cookie ) {
+function getSessionIdFromLaravelCookie( cookie, key ) {
 
     var cookie = JSON.parse( new Buffer( cookie, 'base64' ) );
 
     var iv     = new Buffer( cookie.iv, 'base64' );
     var value  = new Buffer( cookie.value, 'base64' );
-    var key    = '8XALUlWopC72qQtnWPN7r5LEzgCu2aJm'; // laravel app key
 
     var rijCbc = new MCrypt( 'rijndael-128', 'cbc' );
     rijCbc.open( key, iv ); // it's very important to pass iv argument!
@@ -58,9 +61,6 @@ function getSessionIdFromLaravelCookie( cookie ) {
     return sessionId;
 }
 
-process.env.REDIS_DB = 0;
-var cookieKey = 'login_82e5d2c56bdd0811318f0cf078b78bfc';
-var connectedUsers = Array();
 // On websocket connections
 io.on( 'connection', function( client ) {
 
@@ -72,26 +72,48 @@ io.on( 'connection', function( client ) {
     // Get the laravel cookie
     var cookies        = cookie.parse( client.handshake.headers.cookie );
     var laravelSession = cookies.laravel_session;
-    var sessionId      = 'laravel:' + getSessionIdFromLaravelCookie( laravelSession );
+    var sessionId      = 'laravel:' + getSessionIdFromLaravelCookie( laravelSession, key );
     var userId;
 
     // Find the user id
     redisClient.get( sessionId, function( err, session ) {
         try {
             client.laravelSession = PHPUnserialize.unserialize( PHPUnserialize.unserialize( session ) );
-            connectedUsers[ client.laravelSession[ cookieKey ] ] = client;
+            userId = client.laravelSession[ cookieKey ];
+            connectedUsers[ userId ] = client;
         }
         catch ( err ) {
             console.log( 'Error unserializing session!', err );
         }
 
-        if ( client.laravelSession[ cookieKey ] ) {
-            console.log( 'User connected: ' + client.laravelSession[ cookieKey ] );
-            //console.log( 'Total connected: ' + _.keys( connectedUsers ).length );
-            userId = client.laravelSession[ cookieKey ];
-            console.log("userid:"+userId);
+        if ( userId ) {
+            console.log( 'User connected: ' + userId );
+            //console.log( 'Total connected: ' + connectedUsers.length-1);
+            //console.log("Session:" + util.inspect(connectedUsers));
         }
 
-    } );
+    });
 
-} );
+
+    redisClient.psubscribe('*', function(err, count) {
+
+    });
+
+    redisClient.on('pmessage', function(subscribed, channel, message) {
+
+        message = JSON.parse( message );
+
+        // Check to see whether this user should recieve this message
+        if ( message.data.to && message.data.to.indexOf( userId ) > -1 ) {
+
+            // Check the message is not from the connected user
+            console.log('Private Message Recieved : ' + util.inspect(message));
+            client.emit(channel + ':' + message.event, message.data);
+        }
+    });
+
+});
+
+http.listen(3000, function(){
+    console.log('Listening on Port 3000');
+});
