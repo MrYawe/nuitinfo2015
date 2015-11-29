@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('fire', function () {
+    // this fires the event
+    event(new App\Events\EventName());
+    return "event fired";
+});
+
+Route::get('socket-example', function () {
+    // this checks for the event
+    return view('socket_example');
+});
