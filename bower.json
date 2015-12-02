@@ -1,0 +1,8 @@
+{
+  "name": "nuitinfo2015",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.6",
+    "three.js": "threejs#*"
+  }
+}

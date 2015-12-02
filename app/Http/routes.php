@@ -33,3 +33,7 @@ Route::get('socket-example', function () {
     // this checks for the event
     return view('socket_example');
 });
+
+Route::get('threejs-example', function () {
+    return view('threejs-example');
+});

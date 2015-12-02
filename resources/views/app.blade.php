@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Laravel</title>
 
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	<link href="{{ asset('assets/bower/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -17,6 +17,7 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	@yield('head')
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -34,7 +35,8 @@
 			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Welcome</a></li>
-					<li><a href="{{ url('/socket-example') }}">Socket example</a></li>
+					<li><a href="{{ url('/threejs-example') }}">Three.js example</a></li>
+					<li><a href="{{ url('/socket-example') }}">Socket.io example</a></li>
 					<li><a href="{{ url('/fire') }}" target="_blank">Fire public event</a></li>
 					<li><a href="{{ url('/fire-private') }}" target="_blank">Fire private event</a></li>
 				</ul>
@@ -63,8 +65,8 @@
 	@yield('content')
 
 	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="{{ asset('assets/bower/jquery/dist/jquery.min.js') }}"></script>
+	<script src="{{ asset('assets/bower/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 	@yield('javascript')
 </body>
 </html>
