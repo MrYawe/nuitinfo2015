@@ -8,10 +8,11 @@ var mcrypt = require('mcrypt');
 var MCrypt = require('mcrypt').MCrypt;
 var PHPUnserialize = require('php-unserialize');
 var util = require("util");
+require('dotenv').load();
 
 process.env.REDIS_DB = 0;
 var cookieKey = 'login_82e5d2c56bdd0811318f0cf078b78bfc'; // name of the cookie used for authentication. Get by Auth::getName() in Laravel
-var key    = 'v0YAKTyTkRYOTJq15D3yRZ25HHra1yoC'; // laravel app key
+var key = process.env.APP_KEY;
 
 var connectedUsers = [];
 
