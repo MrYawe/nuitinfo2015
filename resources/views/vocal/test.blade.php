@@ -8,10 +8,18 @@
 				<div class="panel-heading">Home</div>
 
 				<div class="panel-body">
-					You are logged in!
+				fgdfg
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 @endsection
+
+@section('javascript')
+    <script src="{{ asset('assets/bower/annyang/annyang.js') }}"></script>
+    <script>
+        
+    </script>
+    <script src="{{ asset('assets/js/vocal.js') }}"></script>
+@stop
