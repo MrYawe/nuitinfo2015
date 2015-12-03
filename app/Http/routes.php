@@ -38,7 +38,6 @@ Route::get('threejs-example', function () {
     return view('threejs-example');
 });
 
-
 Route::get('threejs-planete', function () {
     return view('threejs-planete');
 });
