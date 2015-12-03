@@ -38,6 +38,16 @@ Route::get('threejs-example', function () {
     return view('threejs-example');
 });
 
+
 Route::get('threejs-planete', function () {
     return view('threejs-planete');
+});
+
+
+Route::get('user-info', function () {
+    return view('user.user-info');
+});
+
+Route::get('vocal', function () {
+    return view('vocal.test');
 });
