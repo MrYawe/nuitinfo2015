@@ -37,3 +37,7 @@ Route::get('socket-example', function () {
 Route::get('threejs-example', function () {
     return view('threejs-example');
 });
+
+Route::get('read-test', function() {
+    return view('read');
+});
