@@ -21,7 +21,7 @@ function initialize() {
 		Attacks
 		Hostage taking*/
 
-	var typesEvents = [];
+	console.log(typesEvents);
 
 
 	var stringEarthquake = "Earthquake";
