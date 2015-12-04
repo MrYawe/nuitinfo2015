@@ -41,7 +41,6 @@ Route::get('threejs-example', function () {
 Route::get('threejs-planete', function () {
     $events = Events::all();
     $lesEvents = array();
-    dd($events);
     foreach($events as $key=>$value)
     {
         $lesEvents[] = array(
