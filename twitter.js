@@ -25,7 +25,7 @@ client.get('statuses/user_timeline', params, function(error, tweets, response){
 */
 
 
-client.stream('statuses/filter', {track: 'earthquake'},  function(stream){
+client.stream('statuses/filter', {track: 'twitter'},  function(stream){
   	stream.on('data', function(tweet) {
     	console.log(tweet.text);
 	//allEvents.push(tsunami1);

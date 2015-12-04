@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
+	<title>Panic Map</title>
 
 	<link href="{{ asset('assets/bower/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -30,16 +30,16 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ url('/home') }}">Laravel</a>
+				<a class="navbar-brand" href="{{ url('/home') }}">Panic Map</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Welcome</a></li>
-					<li><a href="{{ url('/threejs-example') }}">Three.js example</a></li>
-					<li><a href="{{ url('/socket-example') }}">Socket.io example</a></li>
+					<!--<li><a href="{{ url('/') }}">Welcome</a></li>
+					<li><a href="{{ url('/threejs-example') }}">Three.js example</a></li> -->
+					<!--<li><a href="{{ url('/socket-example') }}">Socket.io example</a></li>
 					<li><a href="{{ url('/fire') }}" target="_blank">Fire public event</a></li>
-					<li><a href="{{ url('/fire-private') }}" target="_blank">Fire private event</a></li>
+					<li><a href="{{ url('/fire-private') }}" target="_blank">Fire private event</a></li>-->
 					<li><a href="{{ url('/threejs-planete') }}">Planete</a></li>
 				</ul>
 
