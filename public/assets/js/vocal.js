@@ -24,7 +24,7 @@ if(!scribe) {
           }
           else if(word.indexOf("read") >= 0)
           {
-
+            
           }
           else if(word.indexOf("pause") >= 0)
           {
