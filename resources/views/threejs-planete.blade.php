@@ -22,4 +22,17 @@
     <script src="{{ asset('assets/js/webglearth_api.js') }}"></script>
     <!-- les options pour l'api -->
     <script src="{{ asset('assets/js/threejs-planete.js') }}"></script>
+    <script src="{{ asset('assets/js/socket.io/socket.io.js') }}"></script>
+    <script>
+        //var socket = io("{{url()}}:3000");
+        
+        socket.on("tweet", function(tweet, type){
+            allEvents.push({ 
+                x:tweet.place.bounding_box.coordinates[0][0][1], 
+                y:tweet.place.bounding_box.coordinates[0][0][0], 
+                type: type, 
+                ville: tweet.place.name
+            });
+        });
+    </script>
 @stop
