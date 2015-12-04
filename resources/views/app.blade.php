@@ -20,7 +20,7 @@
 	<![endif]-->
 	@yield('head')
 </head>
-<body>
+<body onload="initialize()">
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -44,7 +44,7 @@
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li style="display:inline-block;text-align:right;"><a href="#" style="outline:none;"><img src="assets/img/zoom_in.png" style="margin-right:20px;cursor:pointer;" width="30" id="zoom_in"><img src="assets/img/zoom_out.png" style="cursor:pointer;" width="30" id="zoom_out"></a></li>
+					<li style="display:inline-block;text-align:right;"><a href="#" style="outline:none;"><img src="{{ url('assets/img/zoom_in.png') }}" style="margin-right:20px;cursor:pointer;" width="30" id="zoom_in"><img src="{{ url('assets/img/zoom_out.png') }}" style="cursor:pointer;" width="30" id="zoom_out"></a></li>
 					@if(auth()->guest())
 						@if(!Request::is('auth/login'))
 							<li><a href="{{ url('/auth/login') }}">Login</a></li>
