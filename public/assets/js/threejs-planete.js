@@ -21,7 +21,9 @@ function initialize() {
 		Attacks
 		Hostage taking*/
 
-	var typesEvents = [];
+	console.log(typesEvents);
+	/*var test = jQuery.parseJSON(typesEvents);
+	console.log("tamer");*/
 
 
 	var stringEarthquake = "Earthquake";

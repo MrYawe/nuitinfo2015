@@ -17,6 +17,7 @@
     <script src="{{ asset('assets/js/stats.min.js') }}"></script>
     <script>
         var imgPath = "{{ asset('assets/img/UV_Grid_Sm.jpg') }}";
+        var typesEvents = "{{ html_entity_decode(json_encode($lesEvents)) }}";
     </script>
     <!-- api webglearth pour le globe -->
     <script src="{{ asset('assets/js/webglearth_api.js') }}"></script>
