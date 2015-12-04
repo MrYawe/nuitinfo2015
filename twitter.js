@@ -24,12 +24,13 @@ client.get('statuses/user_timeline', params, function(error, tweets, response){
 });
 */
 
+var types = ['Earthquake', 'Flood', 'Storm', 'Volcanic eruption', 'Avalanche', 'Plant explosion', 'Pollution', 'Attack', 'Hostage'];
 
-client.stream('statuses/filter', {track: 'Earthquake'},  function(stream){
+client.stream('statuses/filter', {track: 'twitter'},  function(stream){
   	stream.on('data', function(tweet) {
     	console.log(tweet.text);
 	//allEvents.push(tsunami1);
-    	io.emit('tweet', tweet, 'Earthquake');
+    	io.emit('tweet', tweet, types[Math.floor(Math.random() * (8 - 0 + 1)) + 0]);
   	});
 
   	stream.on('error', function(error) {
@@ -49,6 +50,7 @@ client.stream('statuses/filter', {track: 'Tsunami'},  function(stream){
     });
 });
 
+/*
 client.stream('statuses/filter', {track: 'Flood'},  function(stream){
     stream.on('data', function(tweet) {
       console.log(tweet.text);
@@ -72,6 +74,7 @@ client.stream('statuses/filter', {track: 'Storm'},  function(stream){
       console.log(error);
     });
 });
+
 
 client.stream('statuses/filter', {track: 'Volcanic eruption'},  function(stream){
     stream.on('data', function(tweet) {
@@ -97,6 +100,7 @@ client.stream('statuses/filter', {track: 'Avalanche'},  function(stream){
     });
 });
 
+/*
 client.stream('statuses/filter', {track: 'Plant explosion'},  function(stream){
     stream.on('data', function(tweet) {
       console.log(tweet.text);
@@ -145,7 +149,7 @@ client.stream('statuses/filter', {track: 'Hostage'},  function(stream){
     });
 });
 
-/*
+
 client.stream('statuses/filter', {follow: 2321461308},  function(stream){
   stream.on('data', function(tweet) {
     console.log(tweet.text);
@@ -163,5 +167,5 @@ io.on( 'connection', function( client ) {
 });
 
 http.listen(3000, function(){
-    console.log('Listening on Port 3000');
+    console.log('Listening on Port 3210');
 });

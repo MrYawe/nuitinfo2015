@@ -30,7 +30,7 @@
     <script src="{{ asset('assets/js/threejs-planete.js') }}"></script>
     <script src="{{ asset('assets/js/socket.io/socket.io.js') }}"></script>
     <script>
-        var socket = io("{{url()}}:3000");
+        var socket = io("{{url()}}:3210");
         var imark = 1;
         var afermer;
         socket.on("tweet", function(tweet, type){
