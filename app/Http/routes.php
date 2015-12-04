@@ -68,4 +68,6 @@ Route::get('read-test', function() {
 
 Route::resource('report', 'ReportController');
 
-
+Route::get('help', function() {
+    return view('help');
+});
