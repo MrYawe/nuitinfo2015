@@ -20,7 +20,7 @@
 	<![endif]-->
 	@yield('head')
 </head>
-<body onload="initialize()">
+<body>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -44,7 +44,7 @@
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li style="display:inline-block;text-align:right;"><img src="assets/img/zoom_in.png" style="margin-top:10px;margin-right:20px;cursor:pointer;width:10%;" id="zoom_in"><img src="assets/img/zoom_out.png" style="margin-top:10px;cursor:pointer;width:10%;" id="zoom_out"></li>
+					<li style="display:inline-block;text-align:right;"><a href="#" style="outline:none;"><img src="assets/img/zoom_in.png" style="margin-right:20px;cursor:pointer;" width="30" id="zoom_in"><img src="assets/img/zoom_out.png" style="cursor:pointer;" width="30" id="zoom_out"></a></li>
 					@if(auth()->guest())
 						@if(!Request::is('auth/login'))
 							<li><a href="{{ url('/auth/login') }}">Login</a></li>
@@ -71,6 +71,9 @@
 	<!-- Scripts -->
 	<script src="{{ asset('assets/bower/jquery/dist/jquery.min.js') }}"></script>
 	<script src="{{ asset('assets/bower/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+	<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+	<script src="{{ asset('assets/js/scribe.js') }}"></script>
+	<script src="{{ asset('assets/js/read-site.js') }}"></script>
 	@yield('javascript')
 </body>
 </html>

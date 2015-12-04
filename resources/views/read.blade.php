@@ -17,10 +17,3 @@
 	</div>
 </div>
 @endsection
-
-@section('javascript')
-
-<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
-<script src="{{ asset('assets/js/read-site.js') }}"></script>
-
-@stop
