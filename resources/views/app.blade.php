@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
+	<title>Panic Map</title>
 
 	<link href="{{ asset('assets/bower/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -30,22 +30,22 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ url('/home') }}">Laravel</a>
+				<a class="navbar-brand" href="{{ url('/home') }}">Panic Map</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Welcome</a></li>
-					<li><a href="{{ url('/threejs-example') }}">Three.js example</a></li>
-					<li><a href="{{ url('/socket-example') }}">Socket.io example</a></li>
+					<!--<li><a href="{{ url('/') }}">Welcome</a></li>
+					<li><a href="{{ url('/threejs-example') }}">Three.js example</a></li> -->
+					<!--<li><a href="{{ url('/socket-example') }}">Socket.io example</a></li>
 					<li><a href="{{ url('/fire') }}" target="_blank">Fire public event</a></li>
-					<li><a href="{{ url('/fire-private') }}" target="_blank">Fire private event</a></li>
+					<li><a href="{{ url('/fire-private') }}" target="_blank">Fire private event</a></li>-->
 					<li><a href="{{ url('/threejs-planete') }}">Planete</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
 					<li style="display:inline-block;text-align:right;"><a href="#" style="outline:none;"><img src="{{ url('assets/img/zoom_in.png') }}" style="margin-right:20px;cursor:pointer;" width="30" id="zoom_in"><img src="{{ url('assets/img/zoom_out.png') }}" style="cursor:pointer;" width="30" id="zoom_out"></a></li>
-					@if(auth()->guest())
+					<!--@if(auth()->guest())
 						@if(!Request::is('auth/login'))
 							<li><a href="{{ url('/auth/login') }}">Login</a></li>
 						@endif
@@ -60,6 +60,7 @@
 							</ul>
 						</li>
 					@endif
+					-->
 				</ul>
 			</div>
 		</div>

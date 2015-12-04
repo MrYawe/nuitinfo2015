@@ -4,27 +4,9 @@ function initialize() {
 	  attribution: '© OpenStreetMap contributors'
 	}).addTo(earth);
 
-	allEvents = [];
+	/*allEvents = [];
 
-	// Tous les types : 
-	/*Natural disasters
-		Earthquakes
-		Tsunamis
-		Storms
-		Flood
-		Avalanches
-		Volcanic eruption
-	Technological hazards
-		Plant explosion
-		Pollution
-	Human hazards
-		Attacks
-		Hostage taking*/
-
-	var intermEvents = eventsInterm.replace(/&quot;/g, '"');
-	var typesEvents = jQuery.parseJSON(intermEvents);
-
-	allMarkers=[];
+	allMarkers=[];*/
 }
 
 // Après la réception de l'info 

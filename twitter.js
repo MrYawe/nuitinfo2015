@@ -25,11 +25,20 @@ client.get('statuses/user_timeline', params, function(error, tweets, response){
 */
 
 
-client.stream('statuses/filter', {track: 'earthquake'},  function(stream){
+client.stream('statuses/filter', {track: 'twitter'},  function(stream){
   	stream.on('data', function(tweet) {
     	console.log(tweet.text);
 	//allEvents.push(tsunami1);
-    	io.emit('tweet', tweet, 'Earthquake');
+    	io.emit('Earthquake', tweet, 'Earthquake');
+      io.emit('Tsunami', tweet, 'Tsunami');
+      io.emit('Flood', tweet, 'Flood');
+      io.emit('Storm', tweet, 'Storm');
+      io.emit('Volcanic eruption', tweet, 'Volcanic eruption');
+      io.emit('Avalanche', tweet, 'Avalanche');
+      io.emit('Plant explosion', tweet, 'Plant explosion');
+      io.emit('Pollution', tweet, 'Pollution');
+      io.emit('Attack', tweet, 'Attack');
+      io.emit('Hostage taking', tweet, 'Hostage taking');
   	});
 
   	stream.on('error', function(error) {
