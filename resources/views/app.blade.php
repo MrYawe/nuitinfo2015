@@ -42,11 +42,8 @@
 					<li><a href="{{ url('/fire-private') }}" target="_blank">Fire private event</a></li>-->
 					<li><a href="{{ url('/threejs-planete') }}">Planete</a></li>
 					<li><a href="{{ url('/report/') }}">Reports</a></li>
-<<<<<<< HEAD
 					<li><a href="{{ url('/user-info/') }}">General advice</a></li>
-=======
 					<li><a href="{{ url('/help/') }}">Help</a></li>
->>>>>>> ac12d4f13c2c1112c26125e9c1f9661e70a088ef
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
