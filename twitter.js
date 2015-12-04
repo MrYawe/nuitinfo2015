@@ -166,6 +166,6 @@ client.stream('statuses/filter', {follow: 2321461308},  function(stream){
 io.on( 'connection', function( client ) {
 });
 
-http.listen(3000, function(){
+http.listen(3210, function(){
     console.log('Listening on Port 3210');
 });
