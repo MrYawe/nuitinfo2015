@@ -95,11 +95,11 @@ window.addEventListener('load', function () {
 		}
 		else if (code == 43) 
 		{
-			zoomIn();
+			zoomIn(zoom_in);
 		}
 		else if (code == 45)
 		{
-			zoomOut();
+			zoomOut(zoom_out);
 		}
 	});
 
@@ -109,7 +109,13 @@ window.addEventListener('load', function () {
 	    var newFontSize = currentFontSizeNum*1.2;
 	    $('html').css('font-size', newFontSize);
 
-	   	event.target.width *= 1.2;
+	    if (event.target) {
+	    	event.target.width *= 1.2;
+	    }
+	    else {
+	    	event.width *= 1.2;
+	    }
+	   	
 	   	var zoom_out = document.getElementById('zoom_out');
 	   	zoom_out.width *= 1.2;
 	}
@@ -120,7 +126,12 @@ window.addEventListener('load', function () {
     	var newFontSize = currentFontSizeNum*0.8;
     	$('html').css('font-size', newFontSize);
 
-    	event.target.width *= 0.8;
+    	if (event.target) {
+	    	event.target.width *= 0.8;
+	    }
+	    else {
+	    	event.width *= 0.8;
+	    }
 	   	var zoom_in = document.getElementById('zoom_in');
 	   	zoom_in.width *= 0.8;
 	}
