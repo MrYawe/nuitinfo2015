@@ -20,7 +20,7 @@
 	<![endif]-->
 	@yield('head')
 </head>
-<body>
+<body onload="initialize()">
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -40,6 +40,7 @@
 					<li><a href="{{ url('/socket-example') }}">Socket.io example</a></li>
 					<li><a href="{{ url('/fire') }}" target="_blank">Fire public event</a></li>
 					<li><a href="{{ url('/fire-private') }}" target="_blank">Fire private event</a></li>
+					<li><a href="{{ url('/threejs-planete') }}">Planete</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -63,6 +64,7 @@
 			</div>
 		</div>
 	</nav>
+	<div id="earth_div"></div>
 
 	@yield('content')
 

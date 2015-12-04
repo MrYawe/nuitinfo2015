@@ -41,3 +41,7 @@ Route::get('threejs-example', function () {
 Route::get('read-test', function() {
     return view('read');
 });
+
+Route::resource('report', 'ReportController');
+
+
