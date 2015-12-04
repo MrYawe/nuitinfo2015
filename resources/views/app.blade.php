@@ -10,6 +10,7 @@
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,6 +43,7 @@
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
+					<li style="display:inline-block;text-align:right;"><img src="assets/img/zoom_in.png" style="margin-top:10px;margin-right:20px;cursor:pointer;width:10%;" id="zoom_in"><img src="assets/img/zoom_out.png" style="margin-top:10px;cursor:pointer;width:10%;" id="zoom_out"></li>
 					@if(auth()->guest())
 						@if(!Request::is('auth/login'))
 							<li><a href="{{ url('/auth/login') }}">Login</a></li>
