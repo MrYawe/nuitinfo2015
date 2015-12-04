@@ -1,4 +1,4 @@
-<div role="tabpanel" class="tab-pane fade" id="otage">
+
 	<h3>React in case of an hostages taken</h3>
 <div class="panel-group" id="accordion10" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -17,5 +17,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>

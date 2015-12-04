@@ -9,7 +9,7 @@
         <ul>
             @foreach($reports as $report)
                 <li>
-                    <a href="{{ route('report.show') }}">{{ $report->location }}</a>
+                    <a href="{{ url('report/' . $report->id) }}">{{ $report->location }}</a>
                 </li>
             @endforeach
         </ul>

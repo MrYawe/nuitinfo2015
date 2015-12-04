@@ -16,7 +16,7 @@ class ReportMigration extends Migration
           $table->increments('id');
           $table->integer('event_type');
           $table->string('location', 30);
-          $table->string('description', 30);
+          $table->string('description', 200);
           $table->timestamps();
         });    
     }

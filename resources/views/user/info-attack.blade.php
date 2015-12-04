@@ -1,4 +1,4 @@
-<div role="tabpanel" class="tab-pane fade" id="attentats">
+
 	<h3>React in case of an terrorist attack</h3>
 <div class="panel-group" id="accordion9" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -13,9 +13,8 @@
       <div class="panel-body">
         - Try to hide or to find a safety place<br>
         - If you can, try to contact authorities as sneaky as possible<br>
-        - If terrorist are not far from you, try to play dead
+        - If terrorists are not far from you, try to play dead
       </div>
     </div>
   </div>
-</div>
 </div>

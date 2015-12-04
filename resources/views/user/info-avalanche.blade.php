@@ -1,4 +1,4 @@
-<div role="tabpanel" class="tab-pane fade" id="avalanche">
+
 	<h3>React in case of an avalanche</h3>
 <div class="panel-group" id="accordion5" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -45,5 +45,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>

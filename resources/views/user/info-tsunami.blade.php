@@ -1,4 +1,4 @@
-<div role="tabpanel" class="tab-pane fade" id="tsunamis">
+
 <h3>React in case of an tsunami</h3>
 <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -53,6 +53,6 @@
 </div>
 
 
-</div>
+
 
 

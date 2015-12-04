@@ -1,4 +1,4 @@
-<div role="tabpanel" class="tab-pane fade" id="crues">
+
 <h3>React in case of an flood</h3>
 <div class="panel-group" id="accordion4" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -52,5 +52,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>

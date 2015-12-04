@@ -32,7 +32,7 @@ class ReportController extends Controller
      */
     public function create()
     {
-        $events = Events::all();
+        $events = Events::orderBy('name')->get();
         return view('report.create', compact('events'));
     }
 
@@ -54,7 +54,8 @@ class ReportController extends Controller
         'location' => $request->input('location'),
         'description' => $request->input('description'),
       ]);
-      return Redirect::route('report.index')->with('message', 'Tournament created');
+
+      return redirect('report/');
     }
     /**
      * Display the specified resource.
@@ -64,7 +65,10 @@ class ReportController extends Controller
      */
     public function show($id)
     {
-        //
+      $report = Report::find($id);
+      $event = Events::find($report->event_type);
+      $type = $event->name;
+      return view('report.show', compact('report', 'type'));
     }
 
     /**

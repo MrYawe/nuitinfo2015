@@ -1,4 +1,4 @@
-<div role="tabpanel" class="tab-pane fade" id="eruption">
+
 	<h3>React in case of an volcanic eruption</h3>
 <div class="panel-group" id="accordion6" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -34,5 +34,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>

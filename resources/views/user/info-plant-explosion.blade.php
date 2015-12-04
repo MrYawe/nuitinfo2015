@@ -1,4 +1,4 @@
-<div role="tabpanel" class="tab-pane fade" id="centrale">
+
 	<h3>React in case of an plant explosion</h3>
 <div class="panel-group" id="accordion7" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -48,5 +48,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>

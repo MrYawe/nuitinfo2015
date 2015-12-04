@@ -1,4 +1,4 @@
-<div role="tabpanel" class="tab-pane fade" id="tempetes">
+
 	<h3>React in case of an windstorms</h3>
 <div class="panel-group" id="accordion3" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -52,5 +52,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>
