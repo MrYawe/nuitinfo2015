@@ -9,7 +9,7 @@
 				<div class="panel-heading">Warnings</div>
 				<div class="panel-body">
 					<ul class="nav nav-tabs" id="myTab">
-					  <li><a href="#general" data-toggle="tab">General advice</a></li>
+					  <li><a href="#general" data-toggle="tab">Home</a></li>
 					  <li class="dropdown">
 						  <a id="drop4" role="button" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						    Natural Disasters
@@ -55,7 +55,7 @@
 					  @include('user.info-tsunami')
 					  </div>
 					  <div role="tabpanel" class="tab-pane fade" id="tempetes">
-					  @include('user.info-windstorm')
+					  @include('user.info-storm')
 					  </div>
 					  <div role="tabpanel" class="tab-pane fade" id="crues">
 					  @include('user.info-flood')
@@ -67,7 +67,7 @@
 					  @include('user.info-attack')
 					  </div>
 					  <div role="tabpanel" class="tab-pane fade" id="otage">
-					  @include('user.info-hostages-taking')
+					  @include('user.info-hostage-taking')
 					  </div>
 					  <div role="tabpanel" class="tab-pane fade" id="centrale">
 					  @include('user.info-plant-explosion')
