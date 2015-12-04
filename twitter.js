@@ -25,25 +25,124 @@ client.get('statuses/user_timeline', params, function(error, tweets, response){
 */
 
 
-client.stream('statuses/filter', {track: 'twitter'},  function(stream){
+client.stream('statuses/filter', {track: 'Earthquake'},  function(stream){
   	stream.on('data', function(tweet) {
     	console.log(tweet.text);
 	//allEvents.push(tsunami1);
-    	io.emit('Earthquake', tweet, 'Earthquake');
-      io.emit('Tsunami', tweet, 'Tsunami');
-      io.emit('Flood', tweet, 'Flood');
-      io.emit('Storm', tweet, 'Storm');
-      io.emit('Volcanic eruption', tweet, 'Volcanic eruption');
-      io.emit('Avalanche', tweet, 'Avalanche');
-      io.emit('Plant explosion', tweet, 'Plant explosion');
-      io.emit('Pollution', tweet, 'Pollution');
-      io.emit('Attack', tweet, 'Attack');
-      io.emit('Hostage taking', tweet, 'Hostage taking');
+    	io.emit('tweet', tweet, 'Earthquake');
   	});
 
   	stream.on('error', function(error) {
     	console.log(error);
   	});
+});
+
+client.stream('statuses/filter', {track: 'Tsunami'},  function(stream){
+    stream.on('data', function(tweet) {
+      console.log(tweet.text);
+  //allEvents.push(tsunami1);
+      io.emit('tweet', tweet, 'Tsunami');
+    });
+
+    stream.on('error', function(error) {
+      console.log(error);
+    });
+});
+
+client.stream('statuses/filter', {track: 'Flood'},  function(stream){
+    stream.on('data', function(tweet) {
+      console.log(tweet.text);
+  //allEvents.push(tsunami1);
+      io.emit('tweet', tweet, 'Flood');
+    });
+
+    stream.on('error', function(error) {
+      console.log(error);
+    });
+});
+
+client.stream('statuses/filter', {track: 'Storm'},  function(stream){
+    stream.on('data', function(tweet) {
+      console.log(tweet.text);
+  //allEvents.push(tsunami1);
+      io.emit('tweet', tweet, 'Storm');
+    });
+
+    stream.on('error', function(error) {
+      console.log(error);
+    });
+});
+
+client.stream('statuses/filter', {track: 'Volcanic eruption'},  function(stream){
+    stream.on('data', function(tweet) {
+      console.log(tweet.text);
+  //allEvents.push(tsunami1);
+      io.emit('tweet', tweet, 'Volcanic eruption');
+    });
+
+    stream.on('error', function(error) {
+      console.log(error);
+    });
+});
+
+client.stream('statuses/filter', {track: 'Avalanche'},  function(stream){
+    stream.on('data', function(tweet) {
+      console.log(tweet.text);
+  //allEvents.push(tsunami1);
+      io.emit('tweet', tweet, 'Avalanche');
+    });
+
+    stream.on('error', function(error) {
+      console.log(error);
+    });
+});
+
+client.stream('statuses/filter', {track: 'Plant explosion'},  function(stream){
+    stream.on('data', function(tweet) {
+      console.log(tweet.text);
+  //allEvents.push(tsunami1);
+      io.emit('tweet', tweet, 'Plant explosion');
+    });
+
+    stream.on('error', function(error) {
+      console.log(error);
+    });
+});
+
+client.stream('statuses/filter', {track: 'Pollution'},  function(stream){
+    stream.on('data', function(tweet) {
+      console.log(tweet.text);
+  //allEvents.push(tsunami1);
+      io.emit('tweet', tweet, 'Pollution');
+    });
+
+    stream.on('error', function(error) {
+      console.log(error);
+    });
+});
+
+client.stream('statuses/filter', {track: 'Attack'},  function(stream){
+    stream.on('data', function(tweet) {
+      console.log(tweet.text);
+  //allEvents.push(tsunami1);
+      io.emit('tweet', tweet, 'Attack');
+    });
+
+    stream.on('error', function(error) {
+      console.log(error);
+    });
+});
+
+client.stream('statuses/filter', {track: 'Hostage'},  function(stream){
+    stream.on('data', function(tweet) {
+      console.log(tweet.text);
+  //allEvents.push(tsunami1);
+      io.emit('tweet', tweet, 'Hostage taking');
+    });
+
+    stream.on('error', function(error) {
+      console.log(error);
+    });
 });
 
 /*
