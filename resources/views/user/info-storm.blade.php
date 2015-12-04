@@ -1,11 +1,11 @@
 <div id="to-read">
-	<h3>React in case of an windstorms<span style="display:none;">.</span></h3>
+	<h3>React in case of a windstorm<span style="display:none;">.</span></h3>
 <div class="panel-group" id="accordion3" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne3">
       <h4 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapseOne3" aria-expanded="true" aria-controls="collapseOne3">
-          Before a windstorms<span style="display:none;">.</span>
+          Before a windstorm<span style="display:none;">.</span>
         </a>
       </h4>
     </div>
