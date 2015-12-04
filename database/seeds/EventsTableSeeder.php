@@ -55,7 +55,7 @@ class EventsTableSeeder extends Seeder
       ]);
       //Human hazards
       DB::table('events')->insert([
-          'name' => 'Attacks',
+          'name' => 'Attack',
           'type' => 'human_hazards',
           'color' => '/assets/img/marker_red.png'
       ]);

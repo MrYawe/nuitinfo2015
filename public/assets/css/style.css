@@ -1,9 +1,14 @@
-body
+body, .navbar-brand, h3
 {
 	font-size:1.6em;
 }
 
-.btn
+.btn, .panel-title
 {
 	font-size:1em;
+}
+
+h2
+{
+	font-size:2em;
 }

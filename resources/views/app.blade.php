@@ -41,6 +41,7 @@
 					<li><a href="{{ url('/fire') }}" target="_blank">Fire public event</a></li>
 					<li><a href="{{ url('/fire-private') }}" target="_blank">Fire private event</a></li>-->
 					<li><a href="{{ url('/threejs-planete') }}">Planete</a></li>
+					<li><a href="{{ url('/report/') }}">Reports</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -62,6 +63,14 @@
 					@endif
 					-->
 				</ul>
+
+				<!-- Button trigger modal -->
+				<a href="{{ url('/report/create') }}">
+			    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+			      Publish a report
+			    </button>
+		    </a>
+
 			</div>
 		</div>
 	</nav>

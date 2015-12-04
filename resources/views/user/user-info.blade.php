@@ -48,16 +48,36 @@
 
 					<div class="tab-content">
 					  @include('user.info-general')
+					  <div role="tabpanel" class="tab-pane fade" id="seisme">
 					  @include('user.info-earthquake')
+					  </div>
+					  <div role="tabpanel" class="tab-pane fade" id="tsunamis">
 					  @include('user.info-tsunami')
+					  </div>
+					  <div role="tabpanel" class="tab-pane fade" id="tempetes">
 					  @include('user.info-windstorm')
+					  </div>
+					  <div role="tabpanel" class="tab-pane fade" id="crues">
 					  @include('user.info-flood')
+					  </div>
+					  <div role="tabpanel" class="tab-pane fade" id="avalanche">
 					  @include('user.info-avalanche')
+					  </div>
+					  <div role="tabpanel" class="tab-pane fade" id="attentats">
 					  @include('user.info-attack')
+					  </div>
+					  <div role="tabpanel" class="tab-pane fade" id="otage">
 					  @include('user.info-hostages-taking')
+					  </div>
+					  <div role="tabpanel" class="tab-pane fade" id="centrale">
 					  @include('user.info-plant-explosion')
+					  </div>
+					  <div role="tabpanel" class="tab-pane fade" id="pollution">
 					  @include('user.info-pollution')
+					  </div>
+					  <div role="tabpanel" class="tab-pane fade" id="eruption">
 					  @include('user.info-volcanic-eruption')
+					  </div>
 					</div>
 				</div>
 
