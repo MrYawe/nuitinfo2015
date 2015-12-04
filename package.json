@@ -13,6 +13,7 @@
     "mcrypt": "^0.1.9",
     "php-unserialize": "0.0.1",
     "socket.io": "^1.3.7",
+    "twitter": "^1.2.5",
     "util": "^0.10.3"
   }
 }
