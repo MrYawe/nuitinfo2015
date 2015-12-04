@@ -22,8 +22,7 @@ class ReportController extends Controller
     public function index()
     {
       $reports = Report::all();
-      dd($reports);
-      //return view('report.create', compact('events'));
+      return view('report.index', compact('reports'));
     }
 
     /**
@@ -49,6 +48,11 @@ class ReportController extends Controller
         'event_type' => 'required',
         'location' => 'required|max:30',
         'description' => 'required|max:200',
+      ]);
+      Report::create([
+        'event_type' => $request->input('event_type'),
+        'location' => $request->input('location'),
+        'description' => $request->input('description'),
       ]);
       return Redirect::route('report.index')->with('message', 'Tournament created');
     }

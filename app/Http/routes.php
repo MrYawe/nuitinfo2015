@@ -62,3 +62,5 @@ Route::get('user-info', function () {
 Route::get('vocal', function () {
     return view('vocal.test');
 });
+
+Route::resource('report', 'ReportController');
