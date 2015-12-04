@@ -12,7 +12,7 @@ use App\Events;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/threejs-planete');
 });
 
 // test : fire public envent
