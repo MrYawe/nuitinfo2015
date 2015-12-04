@@ -60,6 +60,7 @@ Route::get('user-info', function () {
 
 Route::get('vocal', function () {
     return view('vocal.test');
+});
 
 Route::get('read-test', function() {
     return view('read');

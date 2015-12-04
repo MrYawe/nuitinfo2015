@@ -27,8 +27,9 @@ client.get('statuses/user_timeline', params, function(error, tweets, response){
 
 client.stream('statuses/filter', {track: 'earthquake'},  function(stream){
   	stream.on('data', function(tweet) {
-    	//console.log(tweet.text);
-    	io.socket.emit('tweet', tweet, 'Earthquake');
+    	console.log(tweet.text);
+	//allEvents.push(tsunami1);
+    	io.emit('tweet', tweet, 'Earthquake');
   	});
 
   	stream.on('error', function(error) {
@@ -51,10 +52,6 @@ client.stream('statuses/filter', {follow: 2321461308},  function(stream){
 */
 
 io.on( 'connection', function( client ) {
-
-  	socket.on('my other event', function (data) {
-    	console.log(data);
-  	});
 });
 
 http.listen(3000, function(){
