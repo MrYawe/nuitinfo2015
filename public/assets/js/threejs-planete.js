@@ -21,21 +21,8 @@ function initialize() {
 		Attacks
 		Hostage taking*/
 
-	console.log(typesEvents);
-	/*var test = jQuery.parseJSON(typesEvents);
-	console.log("tamer");*/
-
-
-	var stringEarthquake = "Earthquake";
-	var stringTsunami = "Tsunami";
-	var stringStorm = "Storm";
-	var stringFlood = "Flood";
-	var stringAvalanche = "Avalanche";
-	var stringVolcanicEruption = "Volcanic Eruption";
-	var stringPlantExplosion = "Plant Explosion";
-	var stringPollution = "Pollution";
-	var stringAttack = "Attack";
-	var stringHostageTaking = "Hostage Taking";
+	var intermEvents = eventsInterm.replace(/&quot;/g, '"');
+	var typesEvents = jQuery.parseJSON(intermEvents);
 
 	// couleurs en fonction du type
 
@@ -50,17 +37,23 @@ function initialize() {
 
 	// objets tsunami
 
-	var tsunami1 = { x: 26, y:-1, type: stringTsunami, ville: "Iran"};
+	var tsunami1 = { x: 26, y:-1, type: "Tsunami", ville: "Iran"};
 	allEvents.push(tsunami1);
 
 	// création des marqueurs après avoir reçu les objets
 
 	var allMarkers=[];
-	console.log(couleurs);
 
 	for(var i=0; i<allEvents.length; i++) {
-		typeEvent = allEvents[i].type;
-		var marker = WE.marker([allEvents[i].x, allEvents[i].y], couleurs.typeEvent).addTo(earth);
+		for (var j=0; j<typesEvents.length;j++) {
+			console.log(allEvents[i].type);
+			console.log(typesEvents[j]["name"]);
+			if(allEvents[i].type == typesEvents[j].name) {
+				allEvents[i].color = typesEvents[j].color;
+			}
+		}
+		console.log(allEvents[i].color);
+		var marker = WE.marker([allEvents[i].x, allEvents[i].y], allEvents[i].color).addTo(earth);
     	marker.bindPopup("<b>" + allEvents[i].type + "</b><br>" + allEvents[i].ville, {maxWidth: 150, closeButton: true}).openPopup();	
 		allMarkers.push(marker);
 	}
