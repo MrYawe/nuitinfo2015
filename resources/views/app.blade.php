@@ -10,6 +10,7 @@
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,7 +20,7 @@
 	<![endif]-->
 	@yield('head')
 </head>
-<body>
+<body onload="initialize()">
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -39,9 +40,11 @@
 					<li><a href="{{ url('/socket-example') }}">Socket.io example</a></li>
 					<li><a href="{{ url('/fire') }}" target="_blank">Fire public event</a></li>
 					<li><a href="{{ url('/fire-private') }}" target="_blank">Fire private event</a></li>
+					<li><a href="{{ url('/threejs-planete') }}">Planete</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
+					<li style="display:inline-block;text-align:right;"><a href="#" style="outline:none;"><img src="{{ url('assets/img/zoom_in.png') }}" style="margin-right:20px;cursor:pointer;" width="30" id="zoom_in"><img src="{{ url('assets/img/zoom_out.png') }}" style="cursor:pointer;" width="30" id="zoom_out"></a></li>
 					@if(auth()->guest())
 						@if(!Request::is('auth/login'))
 							<li><a href="{{ url('/auth/login') }}">Login</a></li>
@@ -61,12 +64,16 @@
 			</div>
 		</div>
 	</nav>
+	<div id="earth_div"></div>
 
 	@yield('content')
 
 	<!-- Scripts -->
 	<script src="{{ asset('assets/bower/jquery/dist/jquery.min.js') }}"></script>
 	<script src="{{ asset('assets/bower/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+	<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+	<script src="{{ asset('assets/js/scribe.js') }}"></script>
+	<script src="{{ asset('assets/js/read-site.js') }}"></script>
 	@yield('javascript')
 </body>
 </html>

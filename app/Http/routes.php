@@ -1,5 +1,5 @@
 <?php
-
+use App\Events;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -37,3 +37,35 @@ Route::get('socket-example', function () {
 Route::get('threejs-example', function () {
     return view('threejs-example');
 });
+
+Route::get('threejs-planete', function () {
+    $events = Events::all();
+    $lesEvents = array();
+    foreach($events as $key=>$value)
+    {
+        $lesEvents[] = array(
+            "id" => $value->id,
+            "name" => $value->name,
+            "type" => $value->type,
+            "color" => $value->color
+            );
+    }
+    return view('threejs-planete', compact('lesEvents'));
+});
+
+
+Route::get('user-info', function () {
+    return view('user.user-info');
+});
+
+Route::get('vocal', function () {
+    return view('vocal.test');
+});
+
+Route::get('read-test', function() {
+    return view('read');
+});
+
+Route::resource('report', 'ReportController');
+
+
